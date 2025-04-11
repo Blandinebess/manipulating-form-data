@@ -1,95 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Registration Form</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div id="form-container">
-    <h2>Create a New Account</h2>
-    <p>It's quick and easy.</p>
+    <div id="form-container">
+        <h2>Create a New Account</h2>
+        <p>It's quick and easy.</p>
 
-    <form id="registration-form" action="/">
-      <!-- First Name -->
-      <label for="firstName">First Name:</label>
-      <input 
-        type="text" 
-        id="firstName" 
-        name="firstName" 
-        placeholder="First name" 
-        required 
-        minlength="2"
-        title="First name must be at least 2 characters long."
-      />
-      <p id="firstnameErrorMSG" class="error-message"></p>
+        <form id="registration-form" action="/">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" placeholder="First name" required/>
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" placeholder="Last name" required/>
 
-      <!-- Last Name -->
-      <label for="lastName">Last Name:</label>
-      <input 
-        type="text" 
-        id="lastName" 
-        name="lastName" 
-        placeholder="Last name" 
-        required 
-      />
+            <input type="email" id="email" placeholder="Email" required/>
+            <input type="password" id="password" placeholder="Password" required/>
 
-      <!-- Email -->
-      <input 
-        type="email" 
-        id="email" 
-        name="email" 
-        placeholder="Email" 
-        required 
-      />
+            <label id="birthday">Birthday</label>
+            <input type="date" required/>
 
-      <!-- Password -->
-      <input 
-        type="password" 
-        id="password" 
-        name="password" 
-        placeholder="Password" 
-        required 
-      />
+            <label id="language-title">Language</label>
+            <div class="language-options">
+                <label>
+                    <input type="radio" name="language" value="english"/>
+                    English
+                </label>
+                <label>
+                    <input type="radio" name="language" value="spanish" />
+                    Spanish
+                </label>
+                <label>
+                    <input type="radio" name="language" value="french"/>
+                    French
+                </label>
+                <label>
+                    <input type="radio" name="language" value="other"/>
+                    Other
+                </label>
+            </div>
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
 
-      <!-- Birthday -->
-      <label for="birthday">Birthday</label>
-      <input 
-        type="date" 
-        id="birthday" 
-        name="birthday" 
-        required 
-      />
-
-      <!-- Language -->
-      <label id="language-title">Language</label>
-      <div class="language-options">
-        <label>
-          <input type="radio" name="language" value="english" required /> English
-        </label>
-        <label>
-          <input type="radio" name="language" value="spanish" /> Spanish
-        </label>
-        <label>
-          <input type="radio" name="language" value="french" /> French
-        </label>
-        <label>
-          <input type="radio" name="language" value="other" /> Other
-        </label>
-      </div>
-
-      <!-- Submit Button -->
-      <button type="submit">Sign Up</button>
-    </form>
-  </div>
-
-  <!-- Optional form output for individual form data (can be used for debugging or display) -->
-  <div id="formDataOutput"></div>
-
-  <!-- New Output Section for Multiple Submissions -->
-  <div id="output"></div>
-
-  <script src="scripts.js"></script>
+    <div id="formDataOutput"></div>
+    <script src="scripts.js"></script>
 </body>
 </html>
