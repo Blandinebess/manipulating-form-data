@@ -14,6 +14,10 @@
         <form id="registration-form" action="/">
             <label for="firstName">First Name:</label>
             <input type="text" id="firstName" placeholder="First name" required/>
+            <input type="text" id="firstName" required minlength="3">
+<p id="firstNameError" class="error-message"></p>
+    <button type="submit">Submit</button>
+
             <label for="lastName">Last Name:</label>
             <input type="text" id="lastName" placeholder="Last name" required/>
 
@@ -21,7 +25,7 @@
             <input type="password" id="password" placeholder="Password" required/>
 
             <label id="birthday">Birthday</label>
-            <input type="date" required/>
+            <input type="date" title="Enter your birthday" placeholder="MM/DD/YYYY" required/>
 
             <label id="language-title">Language</label>
             <div class="language-options">
@@ -44,9 +48,36 @@
             </div>
             <button type="submit">Sign Up</button>
         </form>
-    </div>
+         </div>
+<script>
+    function validateForm(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Step 2: Create a formData object
+        const form = event.target; // Reference the form element
+        const formData = new FormData(form);
+
+        // Step 3: Convert the formData object into a regular object
+        const Data = Object.fromEntries(formData.entries());
+
+        // Step 4: Log the Data object to the console
+        console.log(Data);
+
+        // Step 5: Show an alert to the user
+        alert("You have successfully completed the form!");
+
+        // Step 6: Reset the form
+        form.reset();
+    }
+
+    // Example: Attach this function to a form's submit event
+    const myForm = document.querySelector("#registration-form");
+    myForm.addEventListener("submit", validateForm);
+</script>
 
     <div id="formDataOutput"></div>
     <script src="scripts.js"></script>
+    <script src="custom-validation.js"></script>
+
 </body>
 </html>
